@@ -7,7 +7,10 @@ import res
 
 CROC_IMG = res.resource_path(".\\croc.jpg")
 
+test_choiserChoices = []
+
 class MainFrame(wx.Frame):
+    global test_choiserChoices
     def __init__(self, parent):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=u"КРОК-Экзамен", pos=wx.DefaultPosition,
                           size=wx.Size(205, 300), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
@@ -33,9 +36,6 @@ class MainFrame(wx.Frame):
         self.m_staticText3.Wrap(-1)
         bSizer1.Add(self.m_staticText3, 0, wx.ALL | wx.EXPAND, 5)
 
-        test_choiserChoices = [u"Логистика", u"ТНТ", u"Сибирь", u"Гипротруба", u"Западная сибирь", u"Дружба",
-                               u"Балтика", u"Надзор", u"Охрана", u"Приволга", u"Диаскан", u"Козьмино", u"Омега", u"ТСД",
-                               u"Томский_завод"]
         self.test_choiser = wx.Choice(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, test_choiserChoices, 0)
         self.test_choiser.SetSelection(0)
         bSizer1.Add(self.test_choiser, 0, wx.ALL | wx.EXPAND, 5)

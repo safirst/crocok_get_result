@@ -3,6 +3,7 @@
 import sys
 import os
 
+
 # PyInstaller hook for detecting run mode
 def resource_path(relative_path):
      try:
