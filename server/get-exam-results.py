@@ -21,7 +21,7 @@ pipe = [
         {'$sort': {'name': 1}},
         {'$project': { '_id':0, 'owner_id':1, 'name': 1, 'qs_points':1 } },
         {'$unwind': '$qs_points'},
-        {'$group': {'_id': {'owner_id': '$owner_id'}, 'name': {'$push': '$name' }, 'number': {'$push': "$qs_points"}}}
+        {'$group': {'_id': {'owner_id': '$owner_id'}, 'name': {'$first': '$name' }, 'number': {'$push': "$qs_points"}}}
         ]
 
 
